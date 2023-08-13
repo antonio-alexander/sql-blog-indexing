@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  mysql:
+    container_name: "mysql"
+    hostname: "mysql"
+    image: yobasystems/alpine-mariadb:latest
+    restart: "always"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: sql_blog_indexing
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+    volumes:
+      - ../../datacharmer/test_db:/tmp/test_db
